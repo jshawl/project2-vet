@@ -4,5 +4,5 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :appointments
-  has_many :pets, through :appointments
+  has_many :pets, through: :appointments
 end
