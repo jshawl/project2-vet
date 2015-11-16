@@ -7,6 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<header>
+  <h1>Doctor Doolittle's Veterinary Medicine</h1>
+</header>
 
   <% if current_user %>
     <h3><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></h3>

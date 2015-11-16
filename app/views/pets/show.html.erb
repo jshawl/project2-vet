@@ -1,0 +1,23 @@
+<h2>Pet Info</h2>
+
+<p>
+<strong>Name:</strong>
+<%= @pet.name %>
+</p>
+
+<p>
+<strong>Breed:</strong>
+<%= @pet.breed %>
+</p>
+
+<p>
+<strong>Gender</strong>:
+<%= @pet.gender %>
+</p>
+
+<p>
+<strong>DOB:
+</strong><%= @pet.dob %>
+</p>
+
+<%= link_to 'back to list', pets_path %> | <%= link_to 'edit', edit_pet_path %>

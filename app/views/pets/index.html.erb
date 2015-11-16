@@ -1,0 +1,12 @@
+<h2>Pets We Care For</h2>
+<h3><%= link_to 'Add a new pet', new_pet_path %></h3>
+
+<ul>
+  <% @pets.each do |pet| %>
+    <li>
+      <a href="/pets/<%= pet.id %>">
+        <%= pet.name %>
+      </a>
+    </li>
+  <% end %>
+</ul>
