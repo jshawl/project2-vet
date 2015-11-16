@@ -27,6 +27,21 @@ class PetsController < ApplicationController
   end
 
   def update
+    @pet = Pet.find(params[:id])
+    if @pet.update(pet_params)
+      flash[:notice] = "#{@pet.name} was successfully updated."
+      redirect_to @pet
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @pet = Pet.find(params[:id])
+    @pet.destroy
+
+    @pets = Pet.all
+    redirect_to pets_path
   end
 
 
