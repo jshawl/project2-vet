@@ -1,0 +1,14 @@
+<h2>Vet Info</h2>
+
+<p>
+<strong>Name:</strong>
+<%= @user.name %>
+</p>
+
+<p>
+<strong>Email:</strong>
+<%= @user.email %>
+</p>
+
+
+<%= link_to 'back to vets', users_path %> | <%= link_to 'edit', edit_user_path %> | <%= link_to 'delete', user_path(@user), method: :delete, class: 'delete' %>
