@@ -12,3 +12,30 @@
 
 
 <%= link_to 'back to vets', vets_path %> | <%= link_to 'edit', edit_vet_path %> | <%= link_to 'delete', vet_path(@vet), method: :delete, class: 'delete' %>
+
+<h3>Upcoming Appointments</h3>
+
+
+<h4>Add a Pet Appointment</h4>
+
+<%= form_for @pet do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :breed %>
+    <%= f.text_field :breed %>
+  </p>
+  <p>
+    <%= f.label :gender %>
+    <%= f.text_field :gender %>
+  </p>
+  <p>
+    <%= f.label :dob %>
+    <%= f.text_field :dob %>
+  </p>
+
+  <%= f.submit %>
+
+<% end %>

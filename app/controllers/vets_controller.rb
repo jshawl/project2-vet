@@ -24,6 +24,7 @@ class VetsController < ApplicationController
 
   def show
     @vet = Vet.find(params[:id])
+    @pet = Pet.create!(params[:pet_id])
   end
 
   def update
