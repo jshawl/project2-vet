@@ -1,0 +1,13 @@
+<%= form_for @vet do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :school %>
+    <%= f.text_field :school %>
+  </p>
+
+  <%= f.submit %>
+
+<% end %>

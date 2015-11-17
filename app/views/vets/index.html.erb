@@ -1,0 +1,13 @@
+<h2>Vets in Our Practice</h2>
+
+<h3><%= link_to 'Add a new vet', new_vet_path %></h3>
+
+<ul>
+  <% @vets.each do |vet| %>
+    <li>
+      <a href="/vets/<%= vet.id %>">
+        <%= vet.name %>
+      </a>
+    </li>
+  <% end %>
+</ul>
