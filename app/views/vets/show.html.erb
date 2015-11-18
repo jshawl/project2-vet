@@ -37,6 +37,8 @@
   <p>
     <%= f.label :appointment %>
     <%= f.text_field :appointmenttime %>
+    <!-- <%= f.collection_select :id, Appointment.order(:appointmenttime), :id, :appointmenttime, include_blank: true %> -->
+
   </p>
 
   <%= f.submit %>
