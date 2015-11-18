@@ -15,12 +15,16 @@
 
 <h3>Upcoming Appointments</h3>
 
+<% if @vet.appointments %>
   <ul>
-  <% @vet.appointments.each do |appointment| %>
-    <li>
-      <%= link_to "#{appointment.pet} (#{appointment.appointmenttime})", pet_appointment_path(@pet, appointment) %>
-    </li>
-  <% end %>
-</ul>
+    <% @vet.appointments.each do |appointment| %>
+      <li>
+        <%= link_to "#{@pet.name} (#{appointment.appointmenttime})", pet_appointment_path(@pet, appointment) %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No appointments scheduled.</p>
+<% end %>
 
-<h4>Add a Pet Appointment</h4>
+<h4>Add an Appointment</h4>
