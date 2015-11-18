@@ -6,6 +6,13 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
+User.destroy_all
+Pet.destroy_all
+Vet.destroy_all
+Appointment.destroy_all
+
+
   ralph = Vet.create(name: "Ralph", school: "Penn")
   marty = Vet.create(name: "Marty", school: "UT")
   earl = Vet.create(name: "Earl", school: "Penn")
@@ -15,6 +22,6 @@
   pongo = Pet.create(name: "Pongo", breed: "Dalmatian")
   perdie = Pet.create(name: "Perdie", breed: "Dalmatian")
 
-  appt9 = Appointment.create(vet: ted, pet: flyer, appointmenttime: "Monday 9a")
+  appt9 = Appointment.create(vet: ted, pet: pooh, appointmenttime: "Monday 9a")
   appt12 = Appointment.create(vet: ted, pet: pongo, appointmenttime: "Monday 12p")
   appt3 = Appointment.create(vet: marty, pet: perdie, appointmenttime: "Monday 3p")

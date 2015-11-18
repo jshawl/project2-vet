@@ -19,7 +19,7 @@
   <ul>
     <% @vet.appointments.each do |appointment| %>
       <li>
-        <%= link_to "#{@pet.name} (#{appointment.appointmenttime})", pet_appointment_path(@pet, appointment) %>
+        <%= "#{@pet.name} (#{appointment.appointmenttime})" %>
       </li>
     <% end %>
   </ul>
@@ -31,13 +31,12 @@
 
 <%= form_for [@vet, @appointment] do |f| %>
   <p>
-    <%= f.label :name %>
+    <%= f.label :critter %>
     <%= f.collection_select :pet_id, Pet.order(:name), :id, :name, include_blank: true %>
-
   </p>
   <p>
     <%= f.label :appointment %>
-    <%= f.text_field :appointment %>
+    <%= f.text_field :appointmenttime %>
   </p>
 
   <%= f.submit %>

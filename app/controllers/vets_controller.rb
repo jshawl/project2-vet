@@ -25,8 +25,9 @@ class VetsController < ApplicationController
   def show
     @vet = Vet.find(params[:id])
     @pet = Pet.find_by(params[:pet_id])
-    @appointment = Appointment.create(params[:appointment_params])
+    @appointment = Appointment.new
     # @pet = Pet.create!(params[:pet_id])
+
   end
 
   def update
