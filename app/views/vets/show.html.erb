@@ -15,27 +15,12 @@
 
 <h3>Upcoming Appointments</h3>
 
+  <ul>
+  <% @vet.appointments.each do |appointment| %>
+    <li>
+      <%= link_to "#{appointment.pet} (#{appointment.appointmenttime})", pet_appointment_path(@pet, appointment) %>
+    </li>
+  <% end %>
+</ul>
 
 <h4>Add a Pet Appointment</h4>
-
-<%= form_for @pet do |f| %>
-  <p>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :breed %>
-    <%= f.text_field :breed %>
-  </p>
-  <p>
-    <%= f.label :gender %>
-    <%= f.text_field :gender %>
-  </p>
-  <p>
-    <%= f.label :dob %>
-    <%= f.text_field :dob %>
-  </p>
-
-  <%= f.submit %>
-
-<% end %>
