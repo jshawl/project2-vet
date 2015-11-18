@@ -8,7 +8,8 @@
 
   ralph = Vet.create(name: "Ralph", school: "Penn")
   marty = Vet.create(name: "Marty", school: "UT")
-  earl = Vet.create(name: "Ted", school: "Penn")
+  earl = Vet.create(name: "Earl", school: "Penn")
+  ted = Vet.create(name: "Ted", school: "Auburn")
 
   pooh = Pet.create(name: "Pooh", breed: "Yellow Bear")
   pongo = Pet.create(name: "Pongo", breed: "Dalmatian")
