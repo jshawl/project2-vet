@@ -28,3 +28,17 @@
 <% end %>
 
 <h4>Add an Appointment</h4>
+
+<%= form_for @appointment do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.collection_select :pet_id, Pet.order(:name), :id, :name, include_blank: true %>
+
+  </p>
+  <p>
+    <%= f.label :appointment %>
+    <%= f.text_field :appointment %>
+  </p>
+
+  <%= f.submit %>
+<% end %>
