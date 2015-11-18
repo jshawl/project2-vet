@@ -25,7 +25,7 @@ class VetsController < ApplicationController
   def show
     @vet = Vet.find(params[:id])
     @pet = Pet.find_by(params[:pet_id])
-    @appointment = Appointment.create(params[:pet_id])
+    @appointment = Appointment.create(params[:pet_params])
     # @pet = Pet.create!(params[:pet_id])
   end
 
@@ -49,6 +49,10 @@ class VetsController < ApplicationController
 private
   def vet_params
     params.require(:vet).permit(:name, :school)
+  end
+
+  def pet_params
+    params.require(:pet).permit(:name)
   end
 
 end
