@@ -7,24 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="container">
+  <header>
+    <h1>Doctor Doolittle's Veterinary Medicine</h1>
+  </header>
 
-<header>
+    <% if current_user %>
+      <h3><%= link_to 'Sign Out', destroy_user_session_path, class: 'btn btn-default', :method => :delete %></h3>
+    <% else %>
+      <h3><%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-default' %> or <%= link_to 'Sign In', new_user_session_path, class: 'btn btn-default' %></h3>
+    <% end %>
 
-  <h1>Doctor Doolittle's Veterinary Medicine</h1>
+    <h4><%= link_to 'Our Vets', vets_path %> | <%= link_to 'Our Pets', pets_path %></h4>
 
-
-
-</header>
-
-  <% if current_user %>
-    <h3><%= link_to 'Sign Out', destroy_user_session_path, class: 'btn btn-default', :method => :delete %></h3>
-  <% else %>
-    <h3><%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-default' %> or <%= link_to 'Sign In', new_user_session_path, class: 'btn btn-default' %></h3>
-  <% end %>
-
-  <h4><%= link_to 'Our Vets', vets_path %> | <%= link_to 'Our Pets', pets_path %></h4>
-
-<%= yield %>
-
+  <%= yield %>
+  </div>
 </body>
 </html>
