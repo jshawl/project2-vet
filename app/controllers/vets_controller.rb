@@ -1,8 +1,9 @@
 class VetsController < ApplicationController
 
-  
+  before_action :set_vets, only: [:index, :new, :show, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:index, :new, :show, :create, :edit, :update, :destroy]
+
   def index
-    authenticate_user!
     @vets = Vet.all
   end
 
@@ -58,4 +59,6 @@ private
     params.require(:appointment).permit(:appointmenttime, :pet_id, :vet_id)
   end
 
+  def set_vets
+  end
 end
