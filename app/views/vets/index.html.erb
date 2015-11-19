@@ -1,13 +1,16 @@
-<h2>Vets in Our Practice</h2>
+<h2>Our Vets</h2>
 
-<h3><%= link_to 'Add a new vet', new_vet_path %></h3>
+<!-- <h3><%= link_to 'Add a new vet', new_vet_path %></h3> -->
+<%= link_to new_vet_path, class: 'btn btn-success' do %>
+  <i class="glyphicon glyphicon-plus"></i> New Vet
+<% end %>
 
 <ul>
   <% @vets.each do |vet| %>
     <li>
-      <a href="/vets/<%= vet.id %>">
+      <h4><a href="/vets/<%= vet.id %>">
         <%= vet.name %>
-      </a>
+      </a></h4>
     </li>
   <% end %>
 </ul>
