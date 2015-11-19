@@ -1,8 +1,8 @@
 class PetsController < ApplicationController
 
 
-
   def index
+    authenticate_user!
     @pets = Pet.all
   end
 

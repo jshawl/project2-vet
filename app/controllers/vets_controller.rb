@@ -1,6 +1,8 @@
 class VetsController < ApplicationController
 
+  
   def index
+    authenticate_user!
     @vets = Vet.all
   end
 
