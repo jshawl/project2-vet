@@ -1,28 +1,23 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Dr. Doolittle's Vet App -
 
-Things you may want to cover:
+A Ruby on Rails application designed to help a vet's office schedule pet appointments.
 
-* Ruby version
+* Users in the vet office need to be able to keep track of vets in the practice,
+pets in the practice, and to schedule appointments.
 
-* System dependencies
+* I created a three-model app to keep track of vets, pets, appointments.  The appointments
+join the vets and pets.  Vets initially were users, but updated thinking to separate users/vets, as this app is likely to be used by support staff to manage appointments.
 
-* Configuration
+* The current app delivers basic functionalities:  create/edit/delett vet, create/edit/delete pet, create appointments.
 
-* Database creation
+* I've realized during my last runthrough before presentation that deleting a vet who has appointments needs some attention, as that action needs also to delete any appointments scheduled with that vet.
 
-* Database initialization
+* Working on being able to edit or delete appointments.
 
-* How to run the test suite
+* Next: update appointment input from string to selector for data consistency.
 
-* Services (job queues, cache servers, search engines, etc.)
+* Little but significant fix from user standpoint:  add appointment reason to appointments!
 
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Also want to display appointment history for each pet to build a record of pet's medical history.
