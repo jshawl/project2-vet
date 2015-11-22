@@ -1,6 +1,8 @@
 class VetsController < ApplicationController
 
   before_action :set_vets, only: [:index, :new, :show, :create, :edit, :update, :destroy]
+  # the only is uneccesarry if you want this action to happen on every route
+  # check out http://guides.rubyonrails.org/action_controller_overview.html#filters
   before_action :authenticate_user!, only: [:index, :new, :show, :create, :edit, :update, :destroy]
 
   def index
@@ -17,6 +19,8 @@ class VetsController < ApplicationController
 
   def create
     @vet = Vet.create!(vet_params)
+    # if you add user_id to vet table, you can:
+    # @vet = Vet.create!(vet_params.merge(user: current_user))
 
     if @vet.save
       redirect_to @vet

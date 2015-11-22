@@ -18,6 +18,8 @@
 <p>
 <strong>DOB:
 </strong><%= @pet.dob %>
+<!-- storing `dob` as a datetime object as well will allow you to format the date
+differently in the future. -->
 </p>
 
 <%= link_to 'back to pet list', pets_path %> | <%= link_to 'edit', edit_pet_path %> | <%= link_to 'delete', pet_path(@pet), method: :delete, class: 'delete' %>
